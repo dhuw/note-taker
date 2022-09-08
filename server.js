@@ -59,6 +59,8 @@ app.post('/api/notes', (req, res) =>
                 console.log("File written successfully\n");
             }
         });
+    } else {
+        res.status(500).json('error in creating new note')
     }
 );
 
