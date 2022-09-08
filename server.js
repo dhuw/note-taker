@@ -16,21 +16,21 @@ app.use(express.static('public'));
 
 //GET route
 app.get('/', (req, res) =>
-    res.sendFiles(path.join(__dirname, '/public/index.html'))
+    res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 
 //sends user to notes
 app.get('/notes', (req, res) =>
-    res.sendFiles(path.join(__dirname, '/public/notes.html'))
+    res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
 //request api to render notes
 app.get('/api/notes', (req, res) =>
-    res.sendFiles(path.join(__dirname, '/db/db.json'))
+    res.sendFile(path.join(__dirname, '/db/db.json'))
 );
 
 app.get('*', (req, res) =>
-    res.sendFiles(path.join(__dirname, '/public/index.html'))
+    res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 
 app.post('/api/notes', (req, res) => {
