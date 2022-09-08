@@ -5,7 +5,6 @@ const {randomUUID} = require('crypto');
 const { readFromFile, writeToFile } = require('./utils')
 
 var db = require('./db/db.json');
-const e = require('express');
 
 const PORT = 3001;
 
