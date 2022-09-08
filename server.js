@@ -33,16 +33,16 @@ app.get('*', (req, res) =>
     res.sendFiles(path.join(__dirname, '/public/index.html'))
 );
 
-app.post('/api/notes', (req, res) =>
+app.post('/api/notes', (req, res) => {
     console.info(`${req.method} request received`);
     const { title, text } = req.body;
+
     if (title && text) {
         const newNote = {
             id: randomUUID(),
-            tite,
+            title,
             text,
         };
-
         const response = {
             status: 'success',
             body: newNote,
@@ -51,19 +51,40 @@ app.post('/api/notes', (req, res) =>
         console.log(response);
         res.status(201).json(response);
         db.push(newNote);
-
         fs.writeFile('./db/db.json', JSON.stringify(db), (err) => {
-            if (err) {
-                console.log(err);
-            }else {
-                console.log("File written successfully\n");
+            if (err) { 
+                console.log(err); 
+            }
+            else { 
+                console.log("File written successfully\n"); 
             }
         });
     } else {
-        res.status(500).json('error in creating new note')
+        res.status(500).json('Error in creating new note');
     }
-);
+})
 
+//deleting route
+app.delete(`/api/notes/:id`, (req, res) => {
+    const noteID = req.params.id;
+    readFromFile('./db/db.json')
+        .then((data) => JSON.parse(data))
+        .then((json) => {
+            let tmpArray = json.filter((dbase) => dbase.id !== noteID);
+
+            writeToFile('./db/db.json', tmpArray);
+
+            //preventing old objects from staying
+            db = tmpArray;
+
+            res.json(`Item ${noteID} has been deleted`);
+        });
+});
+
+//heroku and port 3001
+app.listen(process.env.PORT || 3001, () =>
+console.log(`App listening at http://localhost:${PORT}`)
+);
 
 
 
