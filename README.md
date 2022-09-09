@@ -1,48 +1,32 @@
-# Homework 11
-## Note Taker
-------------------------------
-## Project Description
-A note taking app using express.js
-
-## Languages, APIs, and Libraries Used
-</br>=======================
-
-
-
-## Contributor(s)
-
- Dylan
-- https://github.com/dhuw
-
-## User Story 
-
-AS a , I WANT to , SO THAT  
-
-#### Who are we building this for? 
-
-
-
-
-#### What is the user trying to achieve? 
-
-
-
-
-
-#### Why do they want to achieve this?
-
-
-
-## Deployed Links
-*Deployed page url*
-
-## Screenshots
-
-*mobile*
-
-*tablet*
-
-*desktop*
-
-
-Uses MIT License
+ <h1 align="center">Note Taker 👋</h1>
+  
+  ![badge](https://img.shields.io/badge/license-MIT-brightgreen)<br />
+  ## Description
+  🔍 This note taking app has a pre-generated front-end with a self developed back-end using Express.js and is being deployed through Heroku.
+  ## Table of Contents
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Links](#links)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  ## Installation
+  - npm init
+  - npm install
+  
+  ## Links
+ *link*
+  ## License
+  ![badge](https://img.shields.io/badge/license-MIT-brightgreen)
+  <br />
+  This application is covered by the MIT license. 
+  ## Contributing
+  👪 Dylan
+  ## Tests
+  ✏️ N/A
+  <br />
+  <br />
+  :octocat: Find me on GitHub: [dhuw](https://github.com/dhuw)<br />
+  <br />
+  ✉️ Email me with any questions: hazlewood.dyl@gmail.com<br /><br />
+  _This README was generated with ❤️ by [README-generator](https://github.com/jpd61/README-generator)_
